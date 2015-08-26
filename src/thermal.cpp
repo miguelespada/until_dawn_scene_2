@@ -23,6 +23,7 @@ Thermal::Thermal(App *a){
 
 
 Thermal::~Thermal(){
+    video.stop();
 }
 
 

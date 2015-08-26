@@ -1,4 +1,7 @@
 #include "App.h"
+#include "standby.h"
+#include "index.h"
+#include "calculandoIndex.h"
 
 
 App::App(){
@@ -37,11 +40,45 @@ void App::draw(){
 
 void App::update(){
     current_state->update();
-    current_state->processOsc();
     
     if(ofGetFrameNum() % 15 == 0){
         data.open("http://192.168.1.42:3000/last.json");
     }
+    
+    while(receiver->hasWaitingMessages()){
+        ofxOscMessage m;
+        receiver->getNextMessage(&m);
+        
+        if(m.getAddress() == "/standby"){
+            current_state->clear();
+            setCurrentState(new Standby(this));
+        }
+        
+        if(m.getAddress() == "/next"){
+            current_state->next();
+        }
+        
+        if(m.getAddress() == "/index"){
+            current_state->clear();
+            setCurrentState(new Index(this));
+        }
+        
+        if(m.getAddress() == "/calculandoIndex"){
+            current_state->clear();
+            setCurrentState(new calculandoIndex(this));
+        }
+        
+        if(m.getAddress() == "/save"){
+            bSave = bool(m.getArgAsInt32(0));
+            save();
+        }
+        if(m.getAddress() == "/heart"){
+            current_state->addBeat(m.getArgAsInt32(0));
+        }
+        
+        
+    }
+
 }
 
 void App::update(ofEventArgs &args){
@@ -56,5 +93,14 @@ void App::keyPressed (ofKeyEventArgs& eventArgs){
             break;
         default:
             break;
+    }
+}
+
+void App::save(){
+    ofLogNotice() << "Saving ---> " << bSave;
+    dir = "images/" + data["_id"]["$oid"].asString();
+    if(bSave && !ofDirectory::doesDirectoryExist(dir)){
+        ofDirectory::createDirectory(dir, true);
+        ofLogNotice() << "Creating directory: " << dir << endl;
     }
 }

@@ -32,6 +32,7 @@ public:
     ofTrueTypeFont		*fonts[64];
     ofTrueTypeFont *getFont(int size);
     
+    ofVideoPlayer indices[5];
     
     ofImage wireframe;
     
@@ -40,6 +41,9 @@ public:
     ofVideoPlayer galvanic;
     ofVideoPlayer pressure;
     ofVideoPlayer heart;
+    
+    ofVideoPlayer calculando;
+    ofVideoPlayer standby;
     
     
 private:

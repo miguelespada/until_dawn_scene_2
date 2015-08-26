@@ -15,12 +15,15 @@ class Data: public State
     
 public:
     Data(App *g);
-    ~Data(){};
+    ~Data();
     std::string toString() { return "Data"; }
     void update();
     void draw();
     void next();
-    void processOsc();
+    void drawElapsedTime();
+    void addBeat(int b);
+    
+    void clear();
     
     Optical *optical;
     
@@ -29,5 +32,6 @@ public:
     Pressure *presure;
     Heart *heart;
 };
+
 
 #endif /* defined(__until_dawn_screen_1__standby__) */

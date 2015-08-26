@@ -26,6 +26,7 @@ Galvanic::Galvanic(App *a){
 
 
 Galvanic::~Galvanic(){
+    video.stop();
 }
 
 
@@ -93,8 +94,11 @@ void Galvanic::drawMeasures(){
     ofPushMatrix();
     ofTranslate(600, 1300) ;
     ofScale(2, 10);
-    for(int i = 1; i < voltage.size(); i ++)
-        ofLine(i - 1 , voltage[i - 1], i, voltage[i]);
+    for(int i = 1; i < voltage.size(); i ++){
+        float v0 = ofClamp(voltage[i-1], 0, 50);
+        float v1 = ofClamp(voltage[i], 0, 50);
+        ofLine(i - 1 , v0, i, v1);
+    }
     
     ofPopStyle();
     ofPopMatrix();

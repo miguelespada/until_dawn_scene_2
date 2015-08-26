@@ -25,12 +25,14 @@ public:
     virtual std::string toString() {};
     virtual void draw() {};
     virtual void update() {};
-    virtual void push() {};
-    virtual void end() {};
-    virtual void init() {};
-    
-    virtual void processOsc(){};
+    virtual void standby();
+    virtual void index();
+    virtual void clear() {};
+    virtual void calculandoIndex();
+    virtual void addBeat(int b){};
 };
 
 
 #endif /* defined(__planta__Idle__) */
+
+

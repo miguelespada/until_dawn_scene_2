@@ -22,10 +22,14 @@ Heart::Heart(App *a){
     for(int i = 0; i < SIZE; i ++){
         beats.push_back(0);
     }
+    
+    beat = 0;
 }
 
 
 Heart::~Heart(){
+    cout << "STOP" << endl;
+    video.stop();
 }
 
 
@@ -55,6 +59,7 @@ void Heart::updateMeasures(){
     ofxJSONElement response = app->data["heartRate"];
     
     int M = response.size();
+    if (M < 2) return; 
     if(M > 50)
         M = 50;
     

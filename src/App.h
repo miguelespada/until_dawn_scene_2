@@ -33,6 +33,11 @@ public:
     void jump();
     void draw();
     void cancel();
+    
+    
+    bool bSave;
+    void save();
+    string dir;
 };
 
 

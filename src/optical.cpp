@@ -28,6 +28,7 @@ Optical::Optical(App *a){
 
 
 Optical::~Optical(){
+    video.stop();
 }
 
 

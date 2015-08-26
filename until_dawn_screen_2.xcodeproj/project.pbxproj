@@ -9,15 +9,18 @@
 /* Begin PBXBuildFile section */
 		0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3AA0D4FAA89D0F8A0E545 /* OscReceivedElements.cpp */; };
 		28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5928AA323F5C2690B06C837D /* UdpSocketWin.cpp */; };
+		4970F10F1B8B185600AEE600 /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4970F10E1B8B185600AEE600 /* State.cpp */; };
 		497A42AE1B8726F100650406 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 497A42AC1B8726F100650406 /* App.cpp */; };
 		497A42B11B87273600650406 /* assets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 497A42AF1B87273600650406 /* assets.cpp */; };
-		497A42B41B87279600650406 /* standby.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 497A42B21B87279600650406 /* standby.cpp */; };
 		497A42BA1B872AAC00650406 /* data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 497A42B81B872AAC00650406 /* data.cpp */; };
 		497A42BF1B872C0F00650406 /* optical.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 497A42BD1B872C0F00650406 /* optical.cpp */; };
 		49B6B2051B887A3000DBDD5D /* thermal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49B6B2031B887A3000DBDD5D /* thermal.cpp */; };
 		49B6B20A1B88A0E700DBDD5D /* galvanic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49B6B2081B88A0E700DBDD5D /* galvanic.cpp */; };
 		49B6B20D1B88A71300DBDD5D /* pressure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49B6B20B1B88A71300DBDD5D /* pressure.cpp */; };
 		49B6B2101B88AAD100DBDD5D /* heart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49B6B20E1B88AAD100DBDD5D /* heart.cpp */; };
+		49C85E561B8C65E600C123EF /* calculandoIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49C85E521B8C65E600C123EF /* calculandoIndex.cpp */; };
+		49C85E571B8C65E600C123EF /* index.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49C85E541B8C65E600C123EF /* index.cpp */; };
+		49E429811B8D22F200140182 /* standby.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49E4297F1B8D22F200140182 /* standby.cpp */; };
 		4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */; };
 		510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6DEF695B88BA5FAACEAA937 /* UdpSocket.cpp */; };
 		5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF49D76C45D5DB505A234880 /* ofxOscMessage.cpp */; };
@@ -98,13 +101,12 @@
 		3B361208CD4107E479F04E7B /* NetworkingUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = NetworkingUtils.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/posix/NetworkingUtils.cpp; sourceTree = SOURCE_ROOT; };
 		444657A12E59D0ED86981498 /* TimerListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TimerListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/TimerListener.h; sourceTree = SOURCE_ROOT; };
 		48974F980F51769171D0B2F5 /* IpEndpointName.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = IpEndpointName.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h; sourceTree = SOURCE_ROOT; };
+		4970F10E1B8B185600AEE600 /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = State.cpp; sourceTree = "<group>"; };
 		497A42AB1B8726DB00650406 /* State.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
 		497A42AC1B8726F100650406 /* App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
 		497A42AD1B8726F100650406 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		497A42AF1B87273600650406 /* assets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = assets.cpp; sourceTree = "<group>"; };
 		497A42B01B87273600650406 /* assets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = assets.h; sourceTree = "<group>"; };
-		497A42B21B87279600650406 /* standby.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = standby.cpp; sourceTree = "<group>"; };
-		497A42B31B87279600650406 /* standby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = standby.h; sourceTree = "<group>"; };
 		497A42B81B872AAC00650406 /* data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = data.cpp; sourceTree = "<group>"; };
 		497A42B91B872AAC00650406 /* data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = data.h; sourceTree = "<group>"; };
 		497A42BD1B872C0F00650406 /* optical.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = optical.cpp; sourceTree = "<group>"; };
@@ -117,6 +119,12 @@
 		49B6B20C1B88A71300DBDD5D /* pressure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pressure.h; sourceTree = "<group>"; };
 		49B6B20E1B88AAD100DBDD5D /* heart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = heart.cpp; sourceTree = "<group>"; };
 		49B6B20F1B88AAD100DBDD5D /* heart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = heart.h; sourceTree = "<group>"; };
+		49C85E521B8C65E600C123EF /* calculandoIndex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = calculandoIndex.cpp; sourceTree = "<group>"; };
+		49C85E531B8C65E600C123EF /* calculandoIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calculandoIndex.h; sourceTree = "<group>"; };
+		49C85E541B8C65E600C123EF /* index.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = index.cpp; sourceTree = "<group>"; };
+		49C85E551B8C65E600C123EF /* index.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = index.h; sourceTree = "<group>"; };
+		49E4297F1B8D22F200140182 /* standby.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = standby.cpp; sourceTree = "<group>"; };
+		49E429801B8D22F200140182 /* standby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = standby.h; sourceTree = "<group>"; };
 		4E95FB446A9C9C6F0DE12D75 /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscPrintReceivedElements.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.h; sourceTree = SOURCE_ROOT; };
 		5928AA323F5C2690B06C837D /* UdpSocketWin.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = UdpSocketWin.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/win32/UdpSocketWin.cpp; sourceTree = SOURCE_ROOT; };
 		61313493CDB52744E22A604D /* json-forwards.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = "json-forwards.h"; path = "../../../addons/ofxJSON/libs/jsoncpp/include/json/json-forwards.h"; sourceTree = SOURCE_ROOT; };
@@ -245,10 +253,15 @@
 			isa = PBXGroup;
 			children = (
 				497A42AB1B8726DB00650406 /* State.h */,
-				497A42B21B87279600650406 /* standby.cpp */,
-				497A42B31B87279600650406 /* standby.h */,
+				4970F10E1B8B185600AEE600 /* State.cpp */,
 				497A42B81B872AAC00650406 /* data.cpp */,
 				497A42B91B872AAC00650406 /* data.h */,
+				49C85E521B8C65E600C123EF /* calculandoIndex.cpp */,
+				49C85E531B8C65E600C123EF /* calculandoIndex.h */,
+				49C85E541B8C65E600C123EF /* index.cpp */,
+				49C85E551B8C65E600C123EF /* index.h */,
+				49E4297F1B8D22F200140182 /* standby.cpp */,
+				49E429801B8D22F200140182 /* standby.h */,
 				497A42C01B872C1300650406 /* Modules */,
 			);
 			name = States;
@@ -570,7 +583,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				497A42B41B87279600650406 /* standby.cpp in Sources */,
 				49B6B2101B88AAD100DBDD5D /* heart.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
@@ -580,8 +592,12 @@
 				640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */,
 				8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
+				49E429811B8D22F200140182 /* standby.cpp in Sources */,
 				49B6B2051B887A3000DBDD5D /* thermal.cpp in Sources */,
+				4970F10F1B8B185600AEE600 /* State.cpp in Sources */,
 				49B6B20A1B88A0E700DBDD5D /* galvanic.cpp in Sources */,
+				49C85E561B8C65E600C123EF /* calculandoIndex.cpp in Sources */,
+				49C85E571B8C65E600C123EF /* index.cpp in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
 				497A42AE1B8726F100650406 /* App.cpp in Sources */,
 				510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */,

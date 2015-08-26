@@ -18,11 +18,15 @@ Pressure::Pressure(App *a){
     video.play();
     video.setLoopState(OF_LOOP_NORMAL);
     
+    mean = 0;
+    peaks = 0;
+    max = 0;
  
 }
 
 
 Pressure::~Pressure(){
+    video.stop();
 }
 
 
@@ -52,7 +56,9 @@ void Pressure::updateMeasures(){
     ofxJSONElement stress = app->data["stress"];
     ofxJSONElement flow = app->data["flow"];
     
-    if(flow.size() < 100 || stress.size() < 100)
+    if(flow.size() < 2 || stress.size() < 2)
+        return;
+    
     mean = 0;
     peaks = 0;
     max = 0;

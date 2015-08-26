@@ -51,6 +51,32 @@ void Assets::load(){
     heart.loadMovie(filename);
     ofLogNotice() << "Loading: " << filename;
     
+    
+    filename = "calculando.mov";
+    calculando.loadMovie(filename);
+    ofLogNotice() << "Loading: " << filename;
+    
+    filename = "1_Indiferencia.mov";
+    indices[0].loadMovie(filename);
+    ofLogNotice() << "Loading: " << filename;
+    filename = "2_Inquietud.mov";
+    indices[1].loadMovie(filename);
+    ofLogNotice() << "Loading: " << filename;
+    filename = "3_Miedo.mov";
+    indices[2].loadMovie(filename);
+    ofLogNotice() << "Loading: " << filename;
+    filename = "4_Espanto.mov";
+    indices[3].loadMovie(filename);
+    ofLogNotice() << "Loading: " << filename;
+    filename = "5_Panico.mov";
+    indices[4].loadMovie(filename);
+    ofLogNotice() << "Loading: " << filename;
+    
+    filename = "standby.mov";
+    standby.loadMovie(filename);
+    ofLogNotice() << "Loading: " << filename;
+    
+    
     for(int i = 0; i < 64; i++)
         fonts[i] = NULL;
 }

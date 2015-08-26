@@ -17,6 +17,7 @@ public:
     
     bool bRotated = true;
     void setRotation();
+    void setFullScreen(bool bFull);
     
     App app;
 };
