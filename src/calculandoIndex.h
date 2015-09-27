@@ -19,7 +19,7 @@ public:
     calculandoIndex(App *g);
     ~calculandoIndex(){
         if(video.isLoaded())
-            video.close();
+            video.stop();
     };
     std::string toString() { return "calculandoIndex"; }
     void update();

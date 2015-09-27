@@ -54,33 +54,33 @@ void Optical::drawVideo(){
 }
 
 void Optical::updateMeasures(){
-    ofxJSONElement response = app->data["flow"];
+    
+    int M = flow.size();
     
     peaks = 0;
     mean = 0;
     var = 0;
     max = 0;
     
-    if(response.size() >= FLOW_SIZE){
-        for(int i = 0; i < FLOW_SIZE; i ++){
-            flow[i] = response[response.size() - 1 - i].asFloat();
-            
-            if(flow[i] > max)
-                max = flow[i];
-            
-            mean += flow[i];
-            if(i >= 1){
-                var += abs(flow[i] - flow[i - 1]);
-                if(flow[i] > flow[i - 1] * 1.5)
-                    peaks += 1;
-            }
+    for(int i = 0; i < M; i ++){
+        
+        if(flow[i] > max)
+            max = flow[i];
+        
+        mean += flow[i];
+        if(i >= 1){
+            var += abs(flow[i] - flow[i - 1]);
+            if(flow[i] > flow[i - 1] * 1.5)
+                peaks += 1;
         }
-        mean /= FLOW_SIZE;
-        var /= FLOW_SIZE;
-        mean *= 1000;
-        var *= 1000;
-        max *= 1000;
     }
+    
+        mean /= M;
+        var /= M;
+        mean *= 100;
+        var *= 100;
+        max *= 100;
+    
 }
 
 void Optical::drawMeasures(){
@@ -125,14 +125,15 @@ void Optical::drawMeasures(){
     font->drawStringAsShapes(msg, 248 - font->stringWidth(msg),  1821 + font->getLineHeight() / 1.5);
     
     
-    int s = 150;
     
     ofPushMatrix();
     ofTranslate(85, 1750) ;
     
-    ofScale(2, 1);
-    for(int i = 1; i < flow.size(); i ++)
-        ofLine(i - 1 , - flow[i - 1] * s, i, - flow[i] * s);
+    ofScale(2, 100);
+    
+    for(int i = 1; i < flow.size(); i ++){
+        ofLine(i - 1, -flow[i - 1], i, -flow[i]);
+    }
     
     ofPopStyle();
     ofPopMatrix();

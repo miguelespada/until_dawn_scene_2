@@ -4,3 +4,4 @@ Project.xcconfig
 bin/libs
 obj
 bin/data/*.mov
+bin/data/images/*

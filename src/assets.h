@@ -21,8 +21,6 @@ public:
     static Assets* getInstance();
     void load();
     
-    ofVideoPlayer glitches[5];
-    
     ofColor red = ofColor(231, 57, 51);
     ofColor blue = ofColor(0, 116, 188);
     ofColor yellow = ofColor(254, 223, 82);
@@ -32,10 +30,12 @@ public:
     ofTrueTypeFont		*fonts[64];
     ofTrueTypeFont *getFont(int size);
     
-    ofVideoPlayer indices[5];
     
     ofImage wireframe;
     
+    ofVideoPlayer glitches[5];
+
+    ofVideoPlayer indices[5];
     ofVideoPlayer optical;
     ofVideoPlayer thermal;
     ofVideoPlayer galvanic;
@@ -45,6 +45,7 @@ public:
     ofVideoPlayer calculando;
     ofVideoPlayer standby;
     
+    void stopVideos();
     
 private:
     static Assets* instance;

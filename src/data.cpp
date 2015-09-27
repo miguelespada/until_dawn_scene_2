@@ -103,6 +103,13 @@ void Data::addBeat(int b){
     }
 }
 
+
+void Data::addFlow(float b){
+    optical->flow.push_back(b);
+    if(optical->flow.size() > 200)
+        optical->flow.erase(optical->flow.begin());
+}
+
 void Data::clear(){
     delete optical;
     delete thermal;

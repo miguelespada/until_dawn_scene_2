@@ -22,6 +22,7 @@ public:
     void next();
     void drawElapsedTime();
     void addBeat(int b);
+    void addFlow(float b);
     
     void clear();
     

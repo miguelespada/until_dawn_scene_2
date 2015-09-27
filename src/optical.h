@@ -25,7 +25,6 @@ class Optical
     void updateMeasures();
     
     
-    vector<float> flow;
     
     float mean;
     int peaks;
@@ -38,6 +37,7 @@ public:
     ~Optical();
     void draw();
     void update();
+    vector<float> flow;
 
 };
 

@@ -76,6 +76,10 @@ void App::update(){
             current_state->addBeat(m.getArgAsInt32(0));
         }
         
+        if(m.getAddress() == "/flow"){
+            current_state->addFlow(m.getArgAsFloat(0));
+        }
+        
         
     }
 

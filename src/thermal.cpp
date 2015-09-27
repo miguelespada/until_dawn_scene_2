@@ -49,9 +49,10 @@ void Thermal::drawVideo(){
 
 void Thermal::updateMeasures(){
     ofxJSONElement response = app->data["temp"];
+    
     temperature = response[response.size() - 1].asFloat() / 100.;
-
-
+    max = app->data["max_temp"].asInt() / 100.;
+    min = app->data["min_temp"].asInt() / 100.;
 }
 
 void Thermal::drawMeasures(){
@@ -62,7 +63,7 @@ void Thermal::drawMeasures(){
     string msg = "TEMPERATURA";
     font->drawStringAsShapes(msg, 85,  890 + font->getLineHeight() / 1.5);
     
-    msg = "RESULTADO";
+    msg = "CURRENT";
     font->drawStringAsShapes(msg, 480 - font->stringWidth(msg),  890 + font->getLineHeight() / 1.5);
     
     
@@ -79,4 +80,36 @@ void Thermal::drawMeasures(){
     float x = ofMap(temperature, 26., 42., 86., 480.);
     
     ofLine(x, 1278, x, 1283);
+    
+    
+    font = assets->getFont(12);
+    
+    
+    msg = "MAX: " + ofToString(max);
+    font->drawStringAsShapes(msg, 85, 916 + font->getLineHeight() / 1.5);
+    
+    msg = "MIN: " + ofToString(min);
+    font->drawStringAsShapes(msg, 85,  940 + font->getLineHeight() / 1.5);
+    
+    msg = "TEMP";
+    font->drawStringAsShapes(msg, 480 - font->stringWidth(msg),  1150 + font->getLineHeight() / 1.5);
+    
+    
+    ofPushMatrix();
+    
+    ofxJSONElement data = app->data["temp"];
+
+    ofTranslate(85, 1200) ;
+    ofScale(2, 1);
+    int N = data.size();
+    for(int i = 1; i < N; i ++){
+        float v0 = 50 - data[N - i].asInt() / 100.;
+        float v1 = 50 - data[N - i - 1].asInt() / 100.;
+        ofLine(i - 1 , v0, i, v1);
+        if(i == 200) break;
+    }
+    
+    ofPopStyle();
+    ofPopMatrix();
+    
 }

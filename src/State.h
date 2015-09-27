@@ -30,6 +30,7 @@ public:
     virtual void clear() {};
     virtual void calculandoIndex();
     virtual void addBeat(int b){};
+    virtual void addFlow(float b){};
 };
 
 

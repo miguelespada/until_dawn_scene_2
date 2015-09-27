@@ -92,3 +92,22 @@ ofTrueTypeFont *Assets::getFont(int size){
     }
     return fonts[size];
 }
+
+void Assets::stopVideos(){
+    for(int i = 0; i < 5; i++){
+        indices[i].stop();
+        glitches[i].stop();
+    }
+    
+    standby.stop();
+    calculando.stop();
+    optical.stop();
+    thermal.stop();
+    pressure.stop();
+    galvanic.stop();
+    heart.stop();
+    
+    
+    ofVideoPlayer calculando;
+    ofVideoPlayer standby;
+}

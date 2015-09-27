@@ -23,6 +23,8 @@ class Thermal
     void updateMeasures();
     
     float temperature;
+    float max;
+    float min;
     
     App *app;
     

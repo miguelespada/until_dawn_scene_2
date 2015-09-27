@@ -70,7 +70,7 @@ void Pressure::updateMeasures(){
     
     if(M > 100)
         M = 100;
-    
+    last_mean = 0;
     float prev = 0;
     for(int i = 0; i < M; i ++){
         float v1 = stress[stress.size() - i - 1].asFloat() * .7;
@@ -83,11 +83,15 @@ void Pressure::updateMeasures(){
         
         if(v > prev * 1.4)
             peaks ++;
+        
         prev = v;
         
+        if(i < 10)
+            last_mean += v;
         
     }
     mean /=  M;
+    last_mean /= 10;
     
 }
 
@@ -97,12 +101,12 @@ void Pressure::drawMeasures(){
     string msg = "STRESS";
     font->drawStringAsShapes(msg, 605,  1360 + font->getLineHeight() / 1.5);
     
-    msg = "RESULTADO";
+    msg = "MEAN (LAST secs)";
     font->drawStringAsShapes(msg, 1000 - font->stringWidth(msg),  1360 + font->getLineHeight() / 1.5);
     
     font = assets->getFont(26);
     
-    msg = ofToString(int(mean * 100) / 100.);
+    msg = ofToString(int(last_mean * 100) / 100.);
     font->drawStringAsShapes(msg, 1000 - font->stringWidth(msg),  1387 + font->getLineHeight() / 1.5);
 
     font = assets->getFont(18);
@@ -119,10 +123,10 @@ void Pressure::drawMeasures(){
     msg = ofToString(int(last * 100) / 100);
     font->drawStringAsShapes(msg, 756 - font->stringWidth(msg),  1773 + font->getLineHeight() / 1.5);
     
-    msg = "PEAKS";
+    msg = "MEAN";
     font->drawStringAsShapes(msg, 592, 1796 + font->getLineHeight() / 1.5);
     
-    msg = ofToString(int(peaks));
+    msg = ofToString(int(mean));
     font->drawStringAsShapes(msg, 756 - font->stringWidth(msg),  1796 + font->getLineHeight() / 1.5);
     
     msg = "MAX";
@@ -159,7 +163,7 @@ void Pressure::drawStress(){
     
     for(int i = 0; i < M; i += 1){
         float v1 = stress[stress.size() - i - 1].asFloat() * .7;
-        float v2 = flow[flow.size() - i - 1].asFloat() * 100 * .3;
+        float v2 = flow[flow.size() - i - 1].asFloat() * 5 * .3;
         float v = v1 + v2;
         ofLine(i, 0, i, v);
         ofLine(i, 0, i, -v);

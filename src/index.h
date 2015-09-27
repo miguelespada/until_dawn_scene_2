@@ -21,7 +21,7 @@ class Index: public State
 public:
     Index(App *g);
     ~Index(){
-        video.close();
+        video.stop();
     };
     std::string toString() { return "index"; }
     void update();

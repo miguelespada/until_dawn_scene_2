@@ -27,6 +27,7 @@ class Pressure
     void drawStress();
     
     float mean;
+    float last_mean;
     int max;
     int peaks;
     float last;

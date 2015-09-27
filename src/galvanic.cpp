@@ -52,9 +52,8 @@ void Galvanic::drawVideo(){
 }
 
 void Galvanic::updateMeasures(){
-    ofxJSONElement response = app->data["conductance"];
-    conductance = response[response.size() - 1].asFloat() / 100.;
-    
+    ofxJSONElement response = app->data["galvanicVoltage"];
+    conductance = response[response.size() - 1].asFloat();
     response = app->data["galvanicVoltage"];
     for(int i = 0; i < SIZE; i ++){
         voltage[i] = response[response.size() - 1 - i].asFloat() / 100.;
@@ -75,7 +74,8 @@ void Galvanic::drawMeasures(){
     
     font = assets->getFont(26);
     
-    msg = ofToString(conductance);
+    int v = conductance;
+    msg = ofToString(v) + " %";
     font->drawStringAsShapes(msg, 1000 - font->stringWidth(msg),  916 + font->getLineHeight() / 1.5);
     
     font = assets->getFont(18);
@@ -89,15 +89,15 @@ void Galvanic::drawMeasures(){
     msg = "VOLTAGE";
     font->drawStringAsShapes(msg, 1000 - font->stringWidth(msg),  1256 + font->getLineHeight() / 1.5);
     
-
-    
     ofPushMatrix();
-    ofTranslate(600, 1300) ;
-    ofScale(2, 10);
-    for(int i = 1; i < voltage.size(); i ++){
-        float v0 = ofClamp(voltage[i-1], 0, 50);
-        float v1 = ofClamp(voltage[i], 0, 50);
+    ofTranslate(600, 1250) ;
+    ofScale(2, 1);
+    int N =  voltage.size();
+    for(int i = 1; i < N; i ++){
+        float v0 = ofClamp(50 - voltage[N - i-1] * 100, 0, 50);
+        float v1 = ofClamp(50 - voltage[N - i] * 100, 0, 50);
         ofLine(i - 1 , v0, i, v1);
+        if(i == 200) break;
     }
     
     ofPopStyle();
