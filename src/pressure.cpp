@@ -163,7 +163,7 @@ void Pressure::drawStress(){
     
     for(int i = 0; i < M; i += 1){
         float v1 = stress[stress.size() - i - 1].asFloat() * .7;
-        float v2 = flow[flow.size() - i - 1].asFloat() * 5 * .3;
+        float v2 = flow[flow.size() - i - 1].asFloat() * 100 * .3;
         float v = v1 + v2;
         ofLine(i, 0, i, v);
         ofLine(i, 0, i, -v);
